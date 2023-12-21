@@ -44,7 +44,7 @@ dependencies {
     exclude(group: 'org.jetbrains.kotlin')
   }
 
-  implementation "org.jsoup:jsoup:1.15.3"
+  implementation "org.jsoup:jsoup:1.17.1"
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
