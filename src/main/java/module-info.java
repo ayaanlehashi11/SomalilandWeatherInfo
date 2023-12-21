@@ -7,6 +7,7 @@ module com.ayaanle.somalilandweatherinfo {
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
     requires kotlin.stdlib;
+    requires org.jsoup;
 
     opens com.ayaanle.somalilandweatherinfo to javafx.fxml;
     exports com.ayaanle.somalilandweatherinfo;
