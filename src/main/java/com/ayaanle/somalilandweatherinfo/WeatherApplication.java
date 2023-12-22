@@ -21,7 +21,7 @@ public class WeatherApplication extends Application {
         String API_KEY = "";
         double  latitude ,longtitude;
         String url = "https://api.weatherapi.com/v1/current.json?key=9ea1d4789e9e4883aec81714232112&q=hargeisa&aqi=yes";
-        WeatherInfo wi = new WeatherInfo();
+        WeatherData wi = new WeatherData();
         System.out.println(wi.dataScrapper(url));
         launch();
     }

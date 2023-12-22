@@ -4,11 +4,10 @@ import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class WeatherInfo {
+public class WeatherData implements ExportData {
     String input;
     @SuppressWarnings("CallToPrintStackTrace")
     public String dataScrapper(String url)
@@ -33,5 +32,15 @@ public class WeatherInfo {
                 e.printStackTrace();
             }
         return weather_data;
+    }
+
+    @Override
+    public String export2Json() {
+        return null;
+    }
+
+    @Override
+    public String export2CSV() {
+        return null;
     }
 }

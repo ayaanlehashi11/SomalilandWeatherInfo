@@ -11,4 +11,10 @@ module com.ayaanle.somalilandweatherinfo {
 
     opens com.ayaanle.somalilandweatherinfo to javafx.fxml;
     exports com.ayaanle.somalilandweatherinfo;
+    exports com.ayaanle.somalilandweatherinfo.interfaces;
+    opens com.ayaanle.somalilandweatherinfo.interfaces to javafx.fxml;
+    exports com.ayaanle.somalilandweatherinfo.util;
+    opens com.ayaanle.somalilandweatherinfo.util to javafx.fxml;
+    exports com.ayaanle.somalilandweatherinfo.view;
+    opens com.ayaanle.somalilandweatherinfo.view to javafx.fxml;
 }

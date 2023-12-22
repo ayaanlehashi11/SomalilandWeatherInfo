@@ -1,8 +1,16 @@
 package com.ayaanle.somalilandweatherinfo;
 
-public class Utils {
+public class Utils implements ExportData {
 
+    @Override
+    public String export2Json() {
+        return null;
+    }
 
+    @Override
+    public String export2CSV() {
+        return null;
+    }
 }
 enum City
 {
