@@ -1,16 +1,15 @@
 package com.ayaanle.somalilandweatherinfo;
 
 public interface WeatherParamsInterface {
-    public int [] getTemp();
-    public int getPressure();
-    public int getWindSpeed();
+    int [] getTemp();
+    int getPressure();
+    int getWindSpeed();
+    int getWindAngle();
+    String getWindDirection();
 
-    public int getWindAngle();
-    public String getWindDirection();
-
-    public int getPrecipitation();
-    public int getHumidity();
-    public int getAirQuality();
-    public int getUVIntensity();
-    public int getClouds();
+    int getPrecipitation();
+    int getHumidity();
+    int getAirQuality();
+    int getUVIntensity();
+    int getClouds();
 }
