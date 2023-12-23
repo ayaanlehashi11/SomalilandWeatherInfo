@@ -10,10 +10,10 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
     String API_KEY = "9ea1d4789e9e4883aec81714232112";
     double  latitude ,longtitude;
-    String url = "https://api.weatherapi.com/v1/current.json?key=9ea1d4789e9e4883aec81714232112&q=hargeisa&aqi=yes";
+    String url = "https://api.weatherapi.com/v1/current.json?key="+ API_KEY+"&q=hargeisa&aqi=yes";
     WeatherData wi = new WeatherData();
     //System.out.println(wi.dataScrapper(url));
-    JSONObject obj = new JSONObject(wi.dataScrapper(url));
+    JSONObject jsonObject = wi.getParams(wi.dataScrapper(url));
     /*public String avg_temp()
     {
         WeatherParams wp = new WeatherParams();
@@ -25,7 +25,7 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
     WeatherData wd = new WeatherData();
     int precipitation;
     int humidity;
-    public int pressure;
+    public double pressure = jsonObject.getJSONObject("current").getDouble("pressure_in");
     int wind_speed ,  wind_angle;
     String wind_direction;
     int uv_intensity;
@@ -35,7 +35,7 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
         return new int[]{0};
     }
     @Override
-    public int getPressure() {
+    public double getPressure() {
         return pressure;
     }
     @Override

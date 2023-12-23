@@ -1,5 +1,7 @@
 package com.ayaanle.somalilandweatherinfo;
 
+import org.json.JSONObject;
+
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,4 +38,11 @@ public class WeatherData {
         return weather_data.toString();
     }
 
+    public JSONObject getParams(String url)
+    {
+        JSONObject jsonObject =  new JSONObject(url);
+        if(jsonObject.isEmpty() || jsonObject == null)
+            return null;
+        return jsonObject;
+    }
 }
