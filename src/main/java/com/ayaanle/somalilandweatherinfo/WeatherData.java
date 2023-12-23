@@ -6,41 +6,34 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-public class WeatherData implements ExportData {
+public class WeatherData {
     String input;
     @SuppressWarnings("CallToPrintStackTrace")
     public String dataScrapper(String url)
     {
-        String weather_data =  "";
+        StringBuilder weather_data = new StringBuilder();
         try {
             final URL Url = new URL(url);
             final HttpsURLConnection con = (HttpsURLConnection) Url.openConnection();
-            System.out.println("****** Content of the URL ********");
+            System.out.format("Response code : %d " , con.getResponseCode());
+            System.out.format("Response Message %s" , con.getResponseMessage());
             final BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
             while ((input = br.readLine()) != null) {
-                System.out.println(input);
-                weather_data += input;
-                }
+                    System.out.println(input);
+                    weather_data.append(input);
+            }
             System.out.println(weather_data);
             br.close();
-            } catch(MalformedURLException me)
+            }
+        catch(MalformedURLException me)
             {
                 me.printStackTrace();
             }
-        catch(IOException e){
-                e.printStackTrace();
-            }
-        return weather_data;
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        return weather_data.toString();
     }
 
-    @Override
-    public String export2Json() {
-        return null;
-    }
-
-    @Override
-    public String export2CSV() {
-        return null;
-    }
 }

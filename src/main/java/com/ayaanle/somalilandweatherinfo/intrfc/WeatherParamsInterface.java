@@ -1,4 +1,4 @@
-package com.ayaanle.somalilandweatherinfo;
+package com.ayaanle.somalilandweatherinfo.intrfc;
 
 public interface WeatherParamsInterface {
     int [] getTemp();
