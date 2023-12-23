@@ -82,6 +82,13 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
         NO2,
         O3 , // amount of ozone in the air
     }
+
+    enum Condition
+    {
+        Sunny,
+        Rainy,
+        Cloudy,
+    }
     @Override
     public int getAirQuality()
     {
