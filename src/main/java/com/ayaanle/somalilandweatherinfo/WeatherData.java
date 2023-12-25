@@ -10,6 +10,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 public class WeatherData {
     String input;
+    public WeatherData()
+    {
+
+    }
     @SuppressWarnings("CallToPrintStackTrace")
     public String dataScrapper(String url)
     {

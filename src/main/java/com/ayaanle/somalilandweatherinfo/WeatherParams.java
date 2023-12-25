@@ -98,11 +98,11 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
     @Override
     public int getUVIntensity() {
-        return 0;
+        return uv_intensity;
     }
 
     @Override
     public int getClouds() {
-        return 0;
+        return clouds;
     }
 }

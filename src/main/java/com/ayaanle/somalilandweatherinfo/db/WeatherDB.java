@@ -1,4 +1,7 @@
 package com.ayaanle.somalilandweatherinfo.db;
 
-public class WeatherDB {
+import java.sql.*;
+public class WeatherDB
+{
+
 }

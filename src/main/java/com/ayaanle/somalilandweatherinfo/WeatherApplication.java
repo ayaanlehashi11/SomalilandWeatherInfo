@@ -19,8 +19,8 @@ public class WeatherApplication extends Application {
     }
 
     public static void main(String[] args) {
-        WeatherParams wp = new WeatherParams();
-        System.out.println(wp.getPressure());
-        //launch();
+        //WeatherParams wp = new WeatherParams();
+        //System.out.println(wp.getPressure());
+        launch();
     }
 }
