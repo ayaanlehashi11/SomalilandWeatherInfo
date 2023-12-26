@@ -1,10 +1,10 @@
 package com.ayaanle.somalilandweatherinfo.intrfc;
 
 public interface WeatherParamsInterface {
-    int [] getTemp();
+    double getTemp();
     double getPressure();
-    int getWindSpeed();
-    int getWindAngle();
+    double getWindSpeed();
+    double getWindAngle();
     String getWindDirection();
 
     int getPrecipitation();

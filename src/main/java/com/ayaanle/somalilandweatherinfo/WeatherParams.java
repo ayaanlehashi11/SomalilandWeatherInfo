@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
-    String API_KEY = "yourapikey";
+    String API_KEY = "9ea1d4789e9e4883aec81714232112";
     double  latitude ,longtitude;
     String url = "https://api.weatherapi.com/v1/current.json?key="+ API_KEY+"&q=hargeisa&aqi=yes";
     WeatherData wi = new WeatherData();
@@ -24,27 +24,36 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
     }*/
     WeatherData wd = new WeatherData();
     int precipitation;
-    int humidity;
-    public double pressure = jsonObject.getJSONObject("current").getDouble("pressure_in");
-    int wind_speed ,  wind_angle;
-    String wind_direction;
+    int humidity = jsonObject.getJSONObject("current")
+            .getInt("humidity");
+    double temperature = jsonObject.getJSONObject("current")
+            .getDouble("temp_c");
+    public double pressure = jsonObject.getJSONObject("current")
+            .getDouble("pressure_in");
+    double wind_speed = jsonObject.getJSONObject("current")
+            .getDouble("wind_kph");
+    double wind_angle = jsonObject.getJSONObject("current")
+            .getDouble("wind_degree");
+    String wind_direction = jsonObject.getJSONObject("current")
+            .getString("wind_dir");
     int uv_intensity;
     int clouds;
     @Override
-    public int[] getTemp() {
-        return new int[]{0};
+    public double getTemp() {
+
+        return temperature ;
     }
     @Override
     public double getPressure() {
         return pressure;
     }
     @Override
-    public int getWindSpeed() {
+    public double getWindSpeed() {
         return wind_speed;
     }
 
     @Override
-    public int getWindAngle() {
+    public double getWindAngle() {
         return wind_angle;
     }
 
@@ -59,7 +68,8 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
     }
 
     @Override
-    public int getHumidity() {
+    public int getHumidity()
+    {
         return humidity;
     }
 
@@ -71,9 +81,23 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
     @Override
     public String getCoordinates() {
+
         return null;
     }
 
+    public void print_location()
+    {
+        System.out.println("magaalada : " + jsonObject.getJSONObject("location")
+                .getString("name") + "\n" +
+                "latitude: " + jsonObject.getJSONObject("location")
+                        .getDouble("lat") + "\n" +
+                "longtitude : " + jsonObject.getJSONObject("location")
+                        .getDouble("lon")
+                + "\n" +
+                "localtime : " + jsonObject.getJSONObject("location")
+                        .getString("localtime")
+        );
+    }
 
     enum AIR_QUALITY
     {
