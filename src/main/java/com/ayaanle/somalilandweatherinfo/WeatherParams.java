@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
-    String API_KEY = "9ea1d4789e9e4883aec81714232112";
+    String API_KEY = "apikey";
     double  latitude ,longtitude;
     String url = "https://api.weatherapi.com/v1/current.json?key="+ API_KEY+"&q=hargeisa&aqi=yes";
     WeatherData wi = new WeatherData();
