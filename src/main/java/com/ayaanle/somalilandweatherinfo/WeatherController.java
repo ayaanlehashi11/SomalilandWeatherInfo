@@ -29,7 +29,10 @@ public class WeatherController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         assert combo != null : "fx:id=\"combo\"was not injected check your fxml file";
-        combo.getItems().setAll(City.Hargeisa , City.Berbera , City.Borama);
+        combo.getItems().setAll(City.Hargeisa ,
+                City.Berbera, City.Borama,
+                City.Ainabo, City.Gabilay,
+                City.Saylac, City.Odweyne);
         combo.getSelectionModel().selectedItemProperty()
                 .addListener(new ChangeListener<City>() {
                     @Override
