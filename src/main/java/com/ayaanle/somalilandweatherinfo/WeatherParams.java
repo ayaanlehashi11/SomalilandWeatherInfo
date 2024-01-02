@@ -10,6 +10,85 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
     String API_KEY = "apikey";
     double  latitude ,longtitude;
+
+    String city_name;
+    public String filterCity(City city)
+    {
+        switch(city)
+        {
+            case Hargeisa ->
+            {
+                city_name = "hargeisa";
+                return city_name;
+            }
+            case Gabilay ->
+            {
+                city_name = "Gabilay";
+                return city_name;
+            }
+            case Burao ->
+            {
+                city_name = "Burao";
+                return city_name;
+            }
+            case Odweyne ->
+            {
+                city_name = "Odweyne";
+                return city_name;
+            }
+            case Borama ->
+            {
+                city_name = "Borama";
+                return city_name;
+            }
+            case Baki ->
+            {
+                city_name = "Baki";
+                return city_name;
+            }
+            case Saylac ->
+            {
+                city_name = "Saylac";
+                return city_name;
+            }
+            case Lasanod ->
+            {
+                city_name = "lasanod";
+                return city_name;
+            }
+            case Ainabo ->
+            {
+                city_name = "ainabo";
+                return city_name;
+            }
+            case Taleh ->
+            {
+                city_name = "taleh";
+                return city_name;
+            }
+            case Erigavo ->
+            {
+                city_name = "erigavo";
+                return city_name;
+            }
+            case Laskoray ->
+            {
+                city_name = "laskoray";
+                return city_name;
+            }
+            case Berbera ->
+            {
+                city_name = "berbera";
+                return city_name;
+            }
+            case Sheikh ->
+            {
+                city_name = "sheikh";
+                return city_name;
+            }
+        }
+        return "hargeisa";
+    }
     String url = "https://api.weatherapi.com/v1/current.json?key="+ API_KEY+"&q=hargeisa&aqi=yes";
     WeatherData wi = new WeatherData();
     //System.out.println(wi.dataScrapper(url));
@@ -75,14 +154,18 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
 
     @Override
     public String getCity() {
-        return null;
+        return jsonObject.getJSONObject("location")
+                .getString("city");
     }
 
 
     @Override
     public String getCoordinates() {
-
-        return null;
+        longtitude =  jsonObject.getJSONObject("location")
+                .getDouble("lon");
+        latitude = jsonObject.getJSONObject("location")
+                .getDouble("lat");
+        return "lat: " + latitude + " long: " + longtitude;
     }
 
     public void print_location()

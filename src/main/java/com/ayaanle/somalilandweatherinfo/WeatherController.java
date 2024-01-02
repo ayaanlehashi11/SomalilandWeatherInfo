@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class WeatherController implements Initializable {
+    WeatherParams wp = new WeatherParams();
     @FXML
     private Label welcomeText;
 
@@ -39,8 +40,10 @@ public class WeatherController implements Initializable {
                     public void changed(ObservableValue<? extends City> observableValue,
                                         City city, City t1)
                        {
+                        wp.filterCity(city);
+                        String url = "https://api.weatherapi.com/v1/current.json?key=9ea1d4789e9e4883aec81714232112&q=" + wp.city_name + "&aqi=yes" ;
                         System.out.println("the city that you have selected is " + combo.getValue().toString());
-                    }
+                       }
                 });
     }
 }
