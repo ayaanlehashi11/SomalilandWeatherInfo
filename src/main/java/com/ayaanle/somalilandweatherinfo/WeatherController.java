@@ -41,7 +41,7 @@ public class WeatherController implements Initializable {
                                         City city, City t1)
                        {
                         wp.filterCity(city);
-                        String url = "https://api.weatherapi.com/v1/current.json?key=9ea1d4789e9e4883aec81714232112&q=" + wp.city_name + "&aqi=yes" ;
+                        String url = "https://api.weatherapi.com/v1/current.json?key=apikey&q=" + wp.city_name + "&aqi=yes" ;
                         System.out.println("the city that you have selected is " + combo.getValue().toString());
                        }
                 });
