@@ -7,10 +7,9 @@ import org.json.JSONObject;
 
 
 public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
-
-    String API_KEY = "apikey";
     double  latitude ,longtitude;
 
+    String url = "";
     String city_name;
     public String filterCity(City city)
     {
@@ -89,10 +88,10 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
         }
         return "hargeisa";
     }
-    String url = "https://api.weatherapi.com/v1/current.json?key="+ API_KEY+"&q=hargeisa&aqi=yes";
-    WeatherData wi = new WeatherData();
+    WeatherData wd = new WeatherData();
     //System.out.println(wi.dataScrapper(url));
-    JSONObject jsonObject = wi.getParams(wi.dataScrapper(url));
+
+    JSONObject jsonObject = wd.getParams(wd.dataScrapper(url));
     /*public String avg_temp()
     {
         WeatherParams wp = new WeatherParams();
@@ -101,7 +100,7 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
         JsonArray ja = new JsonArray();
         return "";
     }*/
-    WeatherData wd = new WeatherData();
+
     int precipitation;
     int humidity = jsonObject.getJSONObject("current")
             .getInt("humidity");
