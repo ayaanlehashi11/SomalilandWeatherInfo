@@ -45,7 +45,7 @@ dependencies {
   implementation 'eu.hansolo:toolboxfx:17.0.41'
   implementation 'eu.hansolo:toolbox:17.0.41'
   implementation('org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0')
-  implementation('com.github.almasb:fxgl:17.3') {
+  implementation('com.github.almasb:fxgl:21') {
     exclude(group: 'org.openjfx')
     exclude(group: 'org.jetbrains.kotlin')
   }
