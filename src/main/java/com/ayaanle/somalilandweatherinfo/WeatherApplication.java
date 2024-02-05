@@ -25,7 +25,7 @@ public class WeatherApplication extends Application {
 
     public static void main(String[] args)
     {
-        String url = "https://api.weatherapi.com/v1/current.json?key=9ea1d4789e9e4883aec81714232112&q=hargeisa&aqi=yes";
+        String url = "https://api.weatherapi.com/v1/current.json?key=API_KEY&aqi=yes";
         WeatherModel wm =  new WeatherModel();
         System.out.println(wm.getPressure());
         System.out.println(wm.getHumidity());
