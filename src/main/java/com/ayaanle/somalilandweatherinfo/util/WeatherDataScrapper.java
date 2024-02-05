@@ -1,4 +1,4 @@
-package com.ayaanle.somalilandweatherinfo;
+package com.ayaanle.somalilandweatherinfo.util;
 
 import org.json.JSONObject;
 
@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class WeatherData {
+public class WeatherDataScrapper {
     String input;
-    public WeatherData()
+    public WeatherDataScrapper()
     {
 
     }
@@ -28,7 +28,7 @@ public class WeatherData {
                     System.out.println(input);
                     weather_data.append(input);
             }
-            System.out.println(weather_data);
+            //System.out.println(weather_data);
             br.close();
             }
         catch(MalformedURLException me)
@@ -45,7 +45,7 @@ public class WeatherData {
     public JSONObject getParams(String url)
     {
         JSONObject jsonObject =  new JSONObject(url);
-        if(jsonObject.isEmpty() || jsonObject == null)
+        if(jsonObject.isEmpty())
             return null;
         return jsonObject;
     }

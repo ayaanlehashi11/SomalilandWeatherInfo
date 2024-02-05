@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      nodeOrientation="RIGHT_TO_LEFT" prefHeight="613.0" prefWidth="834.0" spacing="20.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.ayaanle.somalilandweatherinfo.controller.WeatherController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="766.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Close"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <items>
+                <MenuItem mnemonicParsing="false" text="About"/>
+            </items>
+        </Menu>
+    </MenuBar>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+        <DatePicker layoutX="577.0" layoutY="-7.0" prefHeight="33.0" prefWidth="199.0"/>
+    </AnchorPane>
+    <AnchorPane prefHeight="505.0" prefWidth="794.0">
+        <ScrollPane layoutX="891.0" layoutY="4.0" prefHeight="309.0" prefWidth="319.0">
+            <AreaChart prefHeight="298.0" prefWidth="324.0">
+                <xAxis>
+                    <CategoryAxis side="BOTTOM"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis side="LEFT"/>
+                </yAxis>
+            </AreaChart>
+        </ScrollPane>
+        <ScrollPane layoutX="48.0" layoutY="1.0" prefHeight="312.0" prefWidth="433.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="525.0"/>
+        </ScrollPane>
+        <ImageView fx:id="img1" fitHeight="46.0" fitWidth="50.0" layoutX="804.0" layoutY="101.0" pickOnBounds="true"
+                   preserveRatio="true"/>
+        <ImageView fx:id="img2" fitHeight="46.0" fitWidth="50.0" layoutX="804.0" layoutY="14.0" pickOnBounds="true"
+                   preserveRatio="true"/>
+        <ImageView fx:id="img4" fitHeight="46.0" fitWidth="50.0" layoutX="804.0" layoutY="124.0" pickOnBounds="true"
+                   preserveRatio="true"/>
+        <ImageView fx:id="img3" fitHeight="46.0" fitWidth="50.0" layoutX="817.0" layoutY="249.0" pickOnBounds="true"
+                   preserveRatio="true"/>
+    </AnchorPane>
+    <AnchorPane prefHeight="285.0" prefWidth="794.0">
+        <Label fx:id="label1" layoutX="764.0" layoutY="6.0" prefHeight="17.0" prefWidth="28.0" text="Label"/>
+        <AnchorPane layoutX="-112.0" layoutY="-3.0" prefHeight="96.0" prefWidth="1330.0"/>
+        <Label fx:id="label3" layoutX="764.0" layoutY="70.0" text="Label"/>
+        <Label fx:id="label2" layoutX="766.0" layoutY="38.0" prefHeight="17.0" prefWidth="28.0" text="Label"/>
+        <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true"/>
+        <ImageView fitHeight="33.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true"/>
+    </AnchorPane>
+    <ComboBox fx:id="combo" prefHeight="33.0" prefWidth="162.0"/>
+    <AnchorPane prefHeight="128.0" prefWidth="787.0"/>
+</VBox>

@@ -1,17 +1,23 @@
-package com.ayaanle.somalilandweatherinfo;
+package com.ayaanle.somalilandweatherinfo.model;
 
 
+import com.ayaanle.somalilandweatherinfo.util.Utils;
+import com.ayaanle.somalilandweatherinfo.util.WeatherDataScrapper;
 import com.ayaanle.somalilandweatherinfo.intrfc.UtilsInterface;
 import com.ayaanle.somalilandweatherinfo.intrfc.WeatherParamsInterface;
 import org.json.JSONObject;
 
 
-public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
+public class WeatherModel implements WeatherParamsInterface, UtilsInterface {
     double  latitude ,longtitude;
+    String url = "https://api.weatherapi.com/v1/current.json?key=9ea1d4789e9e4883aec81714232112&q=hargeisa&aqi=yes";
+    public WeatherModel()
+    {
 
-    String url = "";
-    String city_name;
-    public String filterCity(City city)
+    }
+    public String city_name;
+
+    public String filterCity(Utils.City city)
     {
         switch(city)
         {
@@ -88,7 +94,7 @@ public class WeatherParams implements WeatherParamsInterface, UtilsInterface {
         }
         return "hargeisa";
     }
-    WeatherData wd = new WeatherData();
+    WeatherDataScrapper wd = new WeatherDataScrapper();
     //System.out.println(wi.dataScrapper(url));
 
     JSONObject jsonObject = wd.getParams(wd.dataScrapper(url));
