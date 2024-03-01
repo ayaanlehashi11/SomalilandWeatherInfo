@@ -51,7 +51,7 @@ dependencies {
   }
 
 
-  implementation 'org.json:json:20231013'
+  implementation 'org.json:json:20240205'
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
